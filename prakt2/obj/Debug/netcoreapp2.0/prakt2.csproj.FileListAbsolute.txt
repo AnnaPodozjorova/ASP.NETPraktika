@@ -1,0 +1,11 @@
+C:\Users\student.VK\source\repos\prakt2\prakt2\bin\Debug\netcoreapp2.0\prakt2.deps.json
+C:\Users\student.VK\source\repos\prakt2\prakt2\bin\Debug\netcoreapp2.0\prakt2.runtimeconfig.json
+C:\Users\student.VK\source\repos\prakt2\prakt2\bin\Debug\netcoreapp2.0\prakt2.runtimeconfig.dev.json
+C:\Users\student.VK\source\repos\prakt2\prakt2\bin\Debug\netcoreapp2.0\prakt2.dll
+C:\Users\student.VK\source\repos\prakt2\prakt2\bin\Debug\netcoreapp2.0\prakt2.pdb
+C:\Users\student.VK\source\repos\prakt2\prakt2\obj\Debug\netcoreapp2.0\prakt2.csprojResolveAssemblyReference.cache
+C:\Users\student.VK\source\repos\prakt2\prakt2\obj\Debug\netcoreapp2.0\prakt2.csproj.CoreCompileInputs.cache
+C:\Users\student.VK\source\repos\prakt2\prakt2\obj\Debug\netcoreapp2.0\prakt2.AssemblyInfoInputs.cache
+C:\Users\student.VK\source\repos\prakt2\prakt2\obj\Debug\netcoreapp2.0\prakt2.AssemblyInfo.cs
+C:\Users\student.VK\source\repos\prakt2\prakt2\obj\Debug\netcoreapp2.0\prakt2.dll
+C:\Users\student.VK\source\repos\prakt2\prakt2\obj\Debug\netcoreapp2.0\prakt2.pdb
