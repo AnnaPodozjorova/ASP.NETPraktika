@@ -1,0 +1,3 @@
+C:\Users\t166038\source\repos\ASP.NETPraktika\prakt2.DataAccess\obj\Debug\netcoreapp2.0\prakt2.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\t166038\source\repos\ASP.NETPraktika\prakt2.DataAccess\obj\Debug\netcoreapp2.0\prakt2.DataAccess.AssemblyInfoInputs.cache
+C:\Users\t166038\source\repos\ASP.NETPraktika\prakt2.DataAccess\obj\Debug\netcoreapp2.0\prakt2.DataAccess.AssemblyInfo.cs
