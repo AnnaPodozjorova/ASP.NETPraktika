@@ -12545,11 +12545,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\student.VK\\source\\repos\\prakt2\\prakt2\\prakt2.csproj",
+      "projectUniqueName": "C:\\Users\\student.VK\\Desktop\\New folder\\prakt2\\prakt2.csproj",
       "projectName": "prakt2",
-      "projectPath": "C:\\Users\\student.VK\\source\\repos\\prakt2\\prakt2\\prakt2.csproj",
+      "projectPath": "C:\\Users\\student.VK\\Desktop\\New folder\\prakt2\\prakt2.csproj",
       "packagesPath": "C:\\Users\\student.VK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student.VK\\source\\repos\\prakt2\\prakt2\\obj\\",
+      "outputPath": "C:\\Users\\student.VK\\Desktop\\New folder\\prakt2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
