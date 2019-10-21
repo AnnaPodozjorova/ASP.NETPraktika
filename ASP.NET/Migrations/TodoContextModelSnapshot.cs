@@ -20,9 +20,7 @@ namespace ASP.NET.Migrations
 
             modelBuilder.Entity("ASP.NET.Models.City", b =>
                 {
-                    b.Property<long>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<long>("id");
 
                     b.Property<string>("countrycode");
 
@@ -34,17 +32,14 @@ namespace ASP.NET.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("countrycode")
-                        .IsUnique()
-                        .HasFilter("[countrycode] IS NOT NULL");
+                    b.HasIndex("countrycode");
 
                     b.ToTable("city");
                 });
 
             modelBuilder.Entity("ASP.NET.Models.Country", b =>
                 {
-                    b.Property<string>("code")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("code");
 
                     b.Property<long>("capital");
 
@@ -82,8 +77,8 @@ namespace ASP.NET.Migrations
             modelBuilder.Entity("ASP.NET.Models.City", b =>
                 {
                     b.HasOne("ASP.NET.Models.Country", "Country")
-                        .WithOne("City")
-                        .HasForeignKey("ASP.NET.Models.City", "countrycode");
+                        .WithMany("City")
+                        .HasForeignKey("countrycode");
                 });
 #pragma warning restore 612, 618
         }

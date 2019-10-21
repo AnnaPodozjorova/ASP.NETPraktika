@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace ASP.NET.Models
     public class Country
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string code { get; set; }
         public string name { get; set; }
         public string continent { get; set; }
@@ -24,6 +26,7 @@ namespace ASP.NET.Models
         public string headofstate { get; set; }
         public long capital { get; set; }
         public string code2 { get; set; }
-        public City City { get; set; }
+        // public City City { get; set; }
+        public ICollection<City> City { get; set; }
     }
 }

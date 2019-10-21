@@ -26,9 +26,7 @@ namespace ASP.NET.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Country>()
-                .HasOne(c => c.City)
-                .WithOne(v => v.Country)
-                .HasForeignKey<City>(c => c.countrycode);
+                .HasMany(c => c.City);
 
 
         }
