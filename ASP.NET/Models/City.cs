@@ -9,11 +9,11 @@ namespace ASP.NET.Models
     public class City
     {
         [Key]
-        public long CityId { get; set; }
-        public string Name { get; set; }
-        public string CountryCode { get; set; }
-        public string District { get; set; }
-        public long Population { get; set; }
+        public long id { get; set; }
+        public string name { get; set; }
+        public string countrycode { get; set; }
+        public string district { get; set; }
+        public long population { get; set; }
         public Country Country { get; set; }
     }
 }

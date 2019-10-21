@@ -12,3 +12,17 @@ C:\Users\User\Desktop\ASP.NET\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorTarge
 C:\Users\User\Desktop\ASP.NET\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.pdb
 C:\Users\User\Desktop\ASP.NET\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.dll
 C:\Users\User\Desktop\ASP.NET\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.pdb
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.csprojAssemblyReference.cache
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorAssemblyInfo.cache
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorAssemblyInfo.cs
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.AssemblyInfo.cs
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.dll
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.pdb
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.deps.json
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.runtimeconfig.json
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.runtimeconfig.dev.json
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.dll
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.pdb
+C:\Users\User\Desktop\New folder\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorTargetAssemblyInfo.cache

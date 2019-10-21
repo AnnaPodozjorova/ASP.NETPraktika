@@ -12963,11 +12963,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ASP.NET\\ASP.NET\\ASP.NET.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\New folder\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj",
       "projectName": "ASP.NET",
-      "projectPath": "C:\\Users\\User\\Desktop\\ASP.NET\\ASP.NET\\ASP.NET.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\New folder\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ASP.NET\\ASP.NET\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\New folder\\ASP.NETPraktika\\ASP.NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
