@@ -17,11 +17,11 @@ namespace ASP.NET.Models
                 (@"Server=(localdb)\mssqllocaldb;Database=CountryDB;Trusted_Connection=False;");
         }
 
-     //   public TodoContext(DbContextOptions<TodoContext> options)
-    //       : base(options)
-   //     {
+        public TodoContext(DbContextOptions<TodoContext> options)
+           : base(options)
+        {
 
-    //    }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
