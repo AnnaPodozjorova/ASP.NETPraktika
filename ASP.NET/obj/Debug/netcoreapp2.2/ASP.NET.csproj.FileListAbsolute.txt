@@ -40,3 +40,17 @@ I:\ASP.NETapp\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.AssemblyIn
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorTargetAssemblyInfo.cache
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.dll
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.pdb
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.deps.json
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.runtimeconfig.json
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.runtimeconfig.dev.json
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.dll
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\bin\Debug\netcoreapp2.2\ASP.NET.pdb
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.csprojAssemblyReference.cache
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.csproj.CoreCompileInputs.cache
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorAssemblyInfo.cache
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorAssemblyInfo.cs
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.AssemblyInfoInputs.cache
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.AssemblyInfo.cs
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.RazorTargetAssemblyInfo.cache
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.dll
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NET\obj\Debug\netcoreapp2.2\ASP.NET.pdb
