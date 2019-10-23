@@ -59,7 +59,7 @@ namespace ASP.NET.Controllers
         [HttpGet("Indep/{name}")]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountriesByIndependenceYear(string name)
         {
-            var country = await _context.country.Where(a => a.indepyear.ToString() == name).ToListAsync();
+            var country = await _context.country.Where(a => a.indepyear == name).ToListAsync();
 
             if (country == null)
             {
