@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP.NET.Controllers
 {
@@ -18,6 +19,20 @@ namespace ASP.NET.Controllers
         public CountriesController(TodoContext context)
         {
             _context = context;
+        }
+
+        [Authorize]
+        [Route("getlogin")]
+        public IActionResult GetLogin()
+        {
+            return Ok($"Ваш логин: {User.Identity.Name}");
+        }
+
+        [Authorize(Roles = "admin")]
+        [Route("getrole")]
+        public IActionResult GetRole()
+        {
+            return Ok("Ваша роль: администратор");
         }
 
         // GET: api/v1/world/Countries/all

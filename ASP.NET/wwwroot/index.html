@@ -15,7 +15,7 @@
         <input type="email" id="emailLogin" /> <br /><br />
         <label>Parool:</label><br />
         <input type="password" id="passwordLogin" /><br /><br />
-        <input type="submit" id="submitLogin" value="Kasutajatunnus" />
+        <input type="submit" id="submitLogin" value="OK" />
     </div>
     <div>
         <input type="submit" id="getDataByLogin" value="Kasutajatunnuse andmed" />
@@ -61,7 +61,7 @@
             e.preventDefault();
             $.ajax({
                 type: 'GET',
-                url: '/api/values/getlogin',
+                url: '/api/v1/world/Countries/getlogin',
                 beforeSend: function (xhr) {
 
                     var token = sessionStorage.getItem(tokenKey);
@@ -79,7 +79,7 @@
             e.preventDefault();
             $.ajax({
                 type: 'GET',
-                url: '/api/values/getrole',
+                url: '/api/v1/world/Countries/getrole',
                 beforeSend: function (xhr) {
 
                     var token = sessionStorage.getItem(tokenKey);

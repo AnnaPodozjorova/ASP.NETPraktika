@@ -68,7 +68,6 @@ namespace ASP.NET
             }
             else
             {
-                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 

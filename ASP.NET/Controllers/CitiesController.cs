@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP.NET.Controllers
 {
