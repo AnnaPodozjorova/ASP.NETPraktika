@@ -17,5 +17,15 @@ namespace ASP.NET.Models
         public string district { get; set; }
         public long population { get; set; }
         public Country Country { get; set; }
+
+        public City(int id, string name, string countrycode, string district, int population)
+        {
+            this.id = id;
+            this.name = name;
+            this.countrycode = countrycode;
+            this.district = district;
+            this.population = population;
+        }
     }
+    
 }

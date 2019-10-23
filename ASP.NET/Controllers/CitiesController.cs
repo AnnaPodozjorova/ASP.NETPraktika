@@ -20,27 +20,6 @@ namespace ASP.NET.Controllers
             _context = context;
         }
 
-        // GET: api/Cities
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<City>>> Getcity()
-        {
-            return await _context.city.ToListAsync();
-        }
-
-        // GET: api/Cities/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<City>> GetCity(long id)
-        {
-            var city = await _context.city.FindAsync(id);
-
-            if (city == null)
-            {
-                return NotFound();
-            }
-
-            return city;
-        }
-
         // PUT: api/Cities/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCity(long id, City city)
@@ -93,6 +72,36 @@ namespace ASP.NET.Controllers
             }
 
             return CreatedAtAction("GetCity", new { id = city.id }, city);
+        }
+
+        // POST: api/Cities/all
+        [HttpPost("/all")]
+        public async Task<ActionResult<City>> PostCities()
+        {
+            var cities = new List<City> {
+            new City { id = 9000, name = "Kohtla-Järve", countrycode = "EST", district = "Ida-Virumaa", population = 35187 },
+            new City { id = 9001, name = "Jõhvi", countrycode = "EST", district = "Ida-Virumaa", population = 10051 },
+            new City { id = 9002, name = "Narva", countrycode = "EST", district = "Ida-Virumaa", population = 57842 }
+            };
+            _context.city.AddRange(cities);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                foreach(City city in cities)
+                if (CityExists(city.id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtAction("GetCities", cities);
         }
 
         // DELETE: api/Cities/5
