@@ -71,7 +71,7 @@ namespace XUnitTestAPI.Api
         }
 
         [Theory]
-        [InlineData("GET", "1997")]
+        [InlineData("GET", "Estonia")]
         public async Task GetCitiesByCountry(string method, string name = null)
         {
             var request = new HttpRequestMessage(new HttpMethod(method), $"api/v1/world/Countries/{name}/city/all");
