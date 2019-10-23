@@ -15,10 +15,10 @@ namespace ASP.NET.Models
         public string name { get; set; }
         public string countrycode { get; set; }
         public string district { get; set; }
-        public long population { get; set; }
+        public long? population { get; set; }
         public Country Country { get; set; }
 
-        public City(long id, string name, string countrycode, string district, long population)
+        public City(long id, string name, string countrycode, string district, long? population)
         {
             this.id = id;
             this.name = name;

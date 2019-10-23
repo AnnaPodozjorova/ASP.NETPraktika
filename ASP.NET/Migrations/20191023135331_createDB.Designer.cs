@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASP.NET.Migrations
 {
     [DbContext(typeof(TodoContext))]
-    [Migration("20191023111114_createDB")]
+    [Migration("20191023135331_createDB")]
     partial class createDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,7 +57,7 @@ namespace ASP.NET.Migrations
 
                     b.Property<string>("headofstate");
 
-                    b.Property<int>("indepyear");
+                    b.Property<string>("indepyear");
 
                     b.Property<double>("lifeexpectancy");
 

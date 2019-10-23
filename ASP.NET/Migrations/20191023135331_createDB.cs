@@ -15,7 +15,7 @@ namespace ASP.NET.Migrations
                     continent = table.Column<string>(nullable: true),
                     region = table.Column<string>(nullable: true),
                     surfacearea = table.Column<long>(nullable: true),
-                    indepyear = table.Column<int>(nullable: true),
+                    indepyear = table.Column<string>(nullable: true),
                     population = table.Column<long>(nullable: true),
                     lifeexpectancy = table.Column<double>(nullable: true),
                     gnp = table.Column<long>(nullable: true),

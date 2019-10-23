@@ -55,7 +55,7 @@ namespace ASP.NET.Migrations
 
                     b.Property<string>("headofstate");
 
-                    b.Property<int>("indepyear");
+                    b.Property<string>("indepyear");
 
                     b.Property<double>("lifeexpectancy");
 
