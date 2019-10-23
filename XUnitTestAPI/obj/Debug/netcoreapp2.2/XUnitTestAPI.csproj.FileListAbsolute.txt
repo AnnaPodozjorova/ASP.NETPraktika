@@ -9,3 +9,6 @@ I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XU
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csproj.CoreCompileInputs.cache
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.AssemblyInfoInputs.cache
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.AssemblyInfo.cs
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\ASP.NET.dll
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\ASP.NET.pdb
+I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csproj.CopyComplete
