@@ -20,6 +20,7 @@ namespace XUnitTestAPI.Api
             var server = new TestServer(new WebHostBuilder()
                 .UseEnvironment("Development")
                 .UseStartup<Startup>());
+            _client = server.CreateClient();
         }
 
         [Theory]
