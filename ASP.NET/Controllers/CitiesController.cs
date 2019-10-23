@@ -75,13 +75,13 @@ namespace ASP.NET.Controllers
         }
 
         // POST: api/Cities/all
-        [HttpPost("/all")]
+        [HttpPost("all")]
         public async Task<ActionResult<City>> PostCities()
         {
             var cities = new List<City> {
-            new City { id = 9000, name = "Kohtla-Järve", countrycode = "EST", district = "Ida-Virumaa", population = 35187 },
-            new City { id = 9001, name = "Jõhvi", countrycode = "EST", district = "Ida-Virumaa", population = 10051 },
-            new City { id = 9002, name = "Narva", countrycode = "EST", district = "Ida-Virumaa", population = 57842 }
+            new City() { id = 9000, name = "Kohtla-Järve", countrycode = "EST", district = "Ida-Virumaa", population = 35187 },
+            new City() { id = 9001, name = "Jõhvi", countrycode = "EST", district = "Ida-Virumaa", population = 10051 },
+            new City() { id = 9002, name = "Narva", countrycode = "EST", district = "Ida-Virumaa", population = 57842 }
             };
             _context.city.AddRange(cities);
             try

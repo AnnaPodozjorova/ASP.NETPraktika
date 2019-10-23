@@ -21,7 +21,7 @@ namespace ASP.NET.Controllers
         }
 
         // GET: api/v1/world/Countries/all
-        [HttpGet("/all")]
+        [HttpGet("all")]
         public async Task<ActionResult<IEnumerable<Country>>> Getcountry()
         {
             return await _context.country.ToListAsync();
@@ -42,7 +42,7 @@ namespace ASP.NET.Controllers
         }
 
         // GET: api/v1/world/Countries/continent/{name} (Europa)
-        [HttpGet("/continent/{name}")]
+        [HttpGet("continent/{name}")]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountriesByContinent(string name)
         {
             var country = await _context.country.Where(a => a.continent == name).ToListAsync();
@@ -55,8 +55,8 @@ namespace ASP.NET.Controllers
             return country;
         }
 
-        // GET: api/v1/world/Countries/continent/{name} (Europa)
-        [HttpGet("/Indep/{name}")]
+        // GET: api/v1/world/Countries/Indep/{year} (1997)
+        [HttpGet("Indep/{name}")]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountriesByIndependenceYear(string name)
         {
             var country = await _context.country.Where(a => a.indepyear.ToString() == name).ToListAsync();
@@ -79,10 +79,13 @@ namespace ASP.NET.Controllers
             {
                 return NotFound();
             }
-
-            var cities = await _context.city.Where(a => a.countrycode == country[0].code).ToListAsync();
-
-            return cities;
+            try
+            {
+                var cities = await _context.city.Where(a => a.countrycode == country[0].code).ToListAsync();
+                return cities;
+            }
+            catch { }
+            return NotFound();
         }
 
         private bool CountryExists(string id)
