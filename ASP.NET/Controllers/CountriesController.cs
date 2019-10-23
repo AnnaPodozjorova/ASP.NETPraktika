@@ -27,7 +27,7 @@ namespace ASP.NET.Controllers
             return await _context.country.ToListAsync();
         }
 
-        // GET: api/v1/world/Countries/5
+        // GET: api/v1/world/Countries/AUT
         [HttpGet("{id}")]
         public async Task<ActionResult<Country>> GetCountry(string id)
         {
@@ -41,7 +41,7 @@ namespace ASP.NET.Controllers
             return country;
         }
 
-        // GET: api/v1/world/Countries/continent/{name} (Europa)
+        // GET: api/v1/world/Countries/continent/{name} (Europe)
         [HttpGet("continent/{name}")]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountriesByContinent(string name)
         {
