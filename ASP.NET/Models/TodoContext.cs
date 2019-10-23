@@ -10,6 +10,7 @@ namespace ASP.NET.Models
     {
         public DbSet<City> city { get; set; }
         public DbSet<Country> country { get; set; }
+        public DbSet<Person> person { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

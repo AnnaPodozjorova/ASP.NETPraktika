@@ -74,6 +74,20 @@ namespace ASP.NET.Migrations
                     b.ToTable("country");
                 });
 
+            modelBuilder.Entity("ASP.NET.Models.Person", b =>
+                {
+                    b.Property<string>("Login")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Role");
+
+                    b.HasKey("Login");
+
+                    b.ToTable("person");
+                });
+
             modelBuilder.Entity("ASP.NET.Models.City", b =>
                 {
                     b.HasOne("ASP.NET.Models.Country", "Country")

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASP.NET.Migrations
 {
     [DbContext(typeof(TodoContext))]
-    [Migration("20191021175237_createDB")]
+    [Migration("20191023111114_createDB")]
     partial class createDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,20 @@ namespace ASP.NET.Migrations
                     b.HasKey("code");
 
                     b.ToTable("country");
+                });
+
+            modelBuilder.Entity("ASP.NET.Models.Person", b =>
+                {
+                    b.Property<string>("Login")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Role");
+
+                    b.HasKey("Login");
+
+                    b.ToTable("person");
                 });
 
             modelBuilder.Entity("ASP.NET.Models.City", b =>

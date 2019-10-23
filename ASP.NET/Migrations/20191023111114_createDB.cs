@@ -32,6 +32,19 @@ namespace ASP.NET.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "person",
+                columns: table => new
+                {
+                    Login = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: true),
+                    Role = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_person", x => x.Login);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "city",
                 columns: table => new
                 {
@@ -62,6 +75,9 @@ namespace ASP.NET.Migrations
         {
             migrationBuilder.DropTable(
                 name: "city");
+
+            migrationBuilder.DropTable(
+                name: "person");
 
             migrationBuilder.DropTable(
                 name: "country");
