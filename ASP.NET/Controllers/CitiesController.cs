@@ -48,7 +48,7 @@ namespace ASP.NET.Controllers
                 }
             }
 
-            return NoContent();
+            return new ObjectResult(city) { StatusCode = 200 };
         }
 
         // POST: api/Cities
@@ -72,7 +72,7 @@ namespace ASP.NET.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCity", new { id = city.id }, city);
+            return new ObjectResult(city) { StatusCode = 200 };
         }
 
         // POST: api/Cities/all
@@ -80,9 +80,9 @@ namespace ASP.NET.Controllers
         public async Task<ActionResult<City>> PostCities()
         {
             var cities = new List<City> {
-            new City() { id = 9000, name = "Kohtla-Järve", countrycode = "EST", district = "Ida-Virumaa", population = 35187 },
-            new City() { id = 9001, name = "Jõhvi", countrycode = "EST", district = "Ida-Virumaa", population = 10051 },
-            new City() { id = 9002, name = "Narva", countrycode = "EST", district = "Ida-Virumaa", population = 57842 }
+            new City() { id = 9009, name = "Kohtla-Järve", countrycode = "EST", district = "Ida-Virumaa", population = 35187 },
+            new City() { id = 9010, name = "Jõhvi", countrycode = "EST", district = "Ida-Virumaa", population = 10051 },
+            new City() { id = 9011, name = "Narva", countrycode = "EST", district = "Ida-Virumaa", population = 57842 }
             };
             _context.city.AddRange(cities);
             try
@@ -102,7 +102,7 @@ namespace ASP.NET.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCities", cities);
+            return new ObjectResult(cities) { StatusCode = 200 };
         }
 
         // DELETE: api/Cities/5
