@@ -27,8 +27,6 @@ namespace ASP.NET.Controllers
         }
 
         // GET api/values
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [Authorize(Roles = "admin")]
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -36,6 +34,7 @@ namespace ASP.NET.Controllers
         }
 
         // GET api/values/5
+        [Authorize(Roles = "admin")]
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {

@@ -45,6 +45,8 @@ namespace ASP.NET.Controllers
                     signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
+            
+
             var response = new
             {
                 access_token = encodedJwt,
