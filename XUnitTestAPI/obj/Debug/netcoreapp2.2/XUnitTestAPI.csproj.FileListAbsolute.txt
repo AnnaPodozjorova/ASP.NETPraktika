@@ -21,7 +21,6 @@ I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\AS
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.dll
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.pdb
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\ASP.NET.dll
-I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\ASP.NET.pdb
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csprojAssemblyReference.cache
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csproj.CoreCompileInputs.cache
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.AssemblyInfoInputs.cache
@@ -29,3 +28,19 @@ I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\AS
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csproj.CopyComplete
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.dll
 I:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.pdb
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.deps.json
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.runtimeconfig.json
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.runtimeconfig.dev.json
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.dll
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\XUnitTestAPI.pdb
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\ASP.NET.dll
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\bin\Debug\netcoreapp2.2\ASP.NET.pdb
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csprojResolveAssemblyReference.cache
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.csproj.CoreCompileInputs.cache
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.AssemblyInfoInputs.cache
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.AssemblyInfo.cs
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.dll
+F:\ASP.NETapp\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\ASP.NETPraktika\XUnitTestAPI\obj\Debug\netcoreapp2.2\XUnitTestAPI.pdb

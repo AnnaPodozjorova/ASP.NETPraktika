@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using ASP.NET.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -31,15 +32,16 @@ namespace ASP.NET
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication((auth =>
+            services.AddAuthentication(x =>
             {
-                auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }))
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
 .AddJwtBearer(options =>
 {
   options.RequireHttpsMetadata = false;
-  options.TokenValidationParameters = new TokenValidationParameters
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
   {
                  // укзывает, будет ли валидироваться издатель при валидации токена
                  ValidateIssuer = true,
@@ -68,6 +70,7 @@ namespace ASP.NET
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddCors();
             services.AddSession();
 
             services.AddDbContext<TodoContext>(options =>
@@ -91,12 +94,17 @@ namespace ASP.NET
             app.UseStaticFiles();
             app.UseSession();
 
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             app.Use(async (context, next) =>
             {
                 var JWToken = context.Session.GetString("JWToken");
                 if (!string.IsNullOrEmpty(JWToken))
                 {
-                    context.Request.Headers.Add("Authorization", "Bearer " + JWToken);
+                    context.Request.Headers.Add("Authorization", "Token " + JWToken);
                 }
                 await next();
             });

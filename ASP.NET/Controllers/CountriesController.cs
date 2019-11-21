@@ -20,7 +20,7 @@ namespace ASP.NET.Controllers
         {
             _context = context;
         }
-
+        
         [Authorize]
         [Route("getlogin")]
         public IActionResult GetLogin()
