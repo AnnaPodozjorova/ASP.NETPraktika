@@ -12520,11 +12520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\XUnitTestAPI\\XUnitTestAPI.csproj",
+      "projectUniqueName": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\XUnitTestAPI\\XUnitTestAPI.csproj",
       "projectName": "XUnitTestAPI",
-      "projectPath": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\XUnitTestAPI\\XUnitTestAPI.csproj",
+      "projectPath": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\XUnitTestAPI\\XUnitTestAPI.csproj",
       "packagesPath": "C:\\Users\\tanko\\.nuget\\packages\\",
-      "outputPath": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\XUnitTestAPI\\obj\\",
+      "outputPath": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\XUnitTestAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12543,8 +12543,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj": {
-              "projectPath": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj"
+            "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj": {
+              "projectPath": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj"
             }
           }
         }

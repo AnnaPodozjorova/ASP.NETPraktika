@@ -12951,11 +12951,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj",
+      "projectUniqueName": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj",
       "projectName": "ASP.NET",
-      "projectPath": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj",
+      "projectPath": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\ASP.NET\\ASP.NET.csproj",
       "packagesPath": "C:\\Users\\tanko\\.nuget\\packages\\",
-      "outputPath": "I:\\ASP.NETapp\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NETPraktika\\ASP.NET\\obj\\",
+      "outputPath": "E:\\муытф\\ASP.NETPraktika-master\\ASP.NETPraktika\\ASP.NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
