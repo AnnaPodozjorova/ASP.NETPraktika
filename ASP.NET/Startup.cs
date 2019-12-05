@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ASP.NET.Models;
+﻿using ASP.NET.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ASP.NET
@@ -30,29 +23,20 @@ namespace ASP.NET
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddJwtBearer(options =>
-{
-  options.RequireHttpsMetadata = false;
-  options.TokenValidationParameters = new TokenValidationParameters
-  {
-                 // укзывает, будет ли валидироваться издатель при валидации токена
-                 ValidateIssuer = true,
-                 // строка, представляющая издателя
-                 ValidIssuer = AuthOptions.ISSUER,
-
-                 // будет ли валидироваться потребитель токена
-                 ValidateAudience = true,
-                 // установка потребителя токена
-                 ValidAudience = AuthOptions.AUDIENCE,
-                 // будет ли валидироваться время существования
-                 ValidateLifetime = true,
-
-                 // установка ключа безопасности
-                 IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                 // валидация ключа безопасности
-                 ValidateIssuerSigningKey = true,
-  };
-});
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        //what to validate
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateIssuerSigningKey = true,
+                        //setup validate data
+                        ValidIssuer = AuthOptions.ISSUER,
+                        ValidAudience = AuthOptions.AUDIENCE,
+                        IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey()
+                    };
+                });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<TodoContext>(options =>
@@ -66,14 +50,6 @@ namespace ASP.NET
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
 
             app.UseAuthentication();
             app.UseMvc();
