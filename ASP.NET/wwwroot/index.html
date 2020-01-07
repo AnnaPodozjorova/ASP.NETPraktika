@@ -2,97 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>JWT в ASP.NET Core Web API</title>
+    <title>Hello React</title>
 </head>
 <body>
-    <div class="userInfo" style="display:none;">
-        <p>Kasutajatunnus: <span class="userName"></span></p>
-        <input type="button" value="Logi välja" id="logOut" />
-    </div>
-    <div class="loginForm">
-        <h3>Logi sisse</h3>
-        <label>E-mail:</label><br />
-        <input type="email" id="emailLogin" /> <br /><br />
-        <label>Parool:</label><br />
-        <input type="password" id="passwordLogin" /><br /><br />
-        <input type="submit" id="submitLogin" value="OK" />
-    </div>
-    <div>
-        <input type="submit" id="getDataByLogin" value="Kasutajatunnuse andmed" />
-    </div>
-    <div>
-        <input type="submit" id="getDataByRole" value="Rolli andmed" />
-    </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script>
-        var tokenKey = "accessToken";
-        $('#submitLogin').click(function (e) {
-            e.preventDefault();
-            var loginData = {
-                grant_type: 'password',
-                username: $('#emailLogin').val(),
-                password: $('#passwordLogin').val()
-            };
-
-            $.ajax({
-                type: 'POST',
-                url: '/token',
-                data: loginData
-            }).success(function (data) {
-                $('.userName').text(data.username);
-                $('.userInfo').css('display', 'block');
-                $('.loginForm').css('display', 'none');
-                // сохраняем в хранилище sessionStorage токен доступа
-                sessionStorage.setItem(tokenKey, data.access_token);
-                console.log(data.access_token);
-            }).fail(function (data) {
-                console.log(data);
-            });
-        });
-
-        $('#logOut').click(function (e) {
-            e.preventDefault();
-            $('.loginForm').css('display', 'block');
-            $('.userInfo').css('display', 'none');
-            sessionStorage.removeItem(tokenKey);
-        });
-
-        $('#getDataByLogin').click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'GET',
-                url: '/api/v1/world/Countries/getlogin',
-                beforeSend: function (xhr) {
-
-                    var token = sessionStorage.getItem(tokenKey);
-                    xhr.setRequestHeader("Authorization", "Bearer " + token); // test it, try to insert into header
-                },
-                success: function (data) {
-                    alert(data);
-                },
-                fail: function (data) {
-                    console.log(data);
-                }
-            });
-        });
-        $('#getDataByRole').click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'GET',
-                url: '/api/v1/world/Countries/getrole',
-                beforeSend: function (xhr) {
-
-                    var token = sessionStorage.getItem(tokenKey);
-                    xhr.setRequestHeader("Authorization", "Bearer " + token);
-                },
-                success: function (data) {
-                    alert(data);
-                },
-                fail: function (data) {
-                    console.log(data);
-                }
-            });
-        });
-    </script>
+    <div id="content"></div>
+    <script crossorigin='anonymous' src="https://cdnjs.cloudflare.com/ajax/libs/react/16.11.0/umd/react.development.js"></script>
+    <script crossorigin='anonymous' src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.11.0/umd/react-dom.development.js"></script>
+    <script src="js/app.jsx"></script>
 </body>
 </html>

@@ -33,7 +33,7 @@ namespace XUnitTestAPI.Api
 
             response.EnsureSuccessStatusCode();
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        } // https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2  https://dotnetcorecentral.com/blog/asp-net-core-web-api-unit-testing-with-xunit/
+        }
 
         [Theory]
         [InlineData("GET", "Europe")]

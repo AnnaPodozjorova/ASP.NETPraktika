@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ASP.NET.Models;
+﻿using ASP.NET.Models;
+using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using React.AspNet;
 
 namespace ASP.NET
 {
@@ -32,46 +26,29 @@ namespace ASP.NET
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-.AddJwtBearer(options =>
-{
-  options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
-  {
-                 // укзывает, будет ли валидироваться издатель при валидации токена
-                 ValidateIssuer = true,
-                 // строка, представляющая издателя
-                 ValidIssuer = AuthOptions.ISSUER,
+            //React
+            services.AddMemoryCache();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
+            services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
 
-                 // будет ли валидироваться потребитель токена
-                 ValidateAudience = true,
-                 // установка потребителя токена
-                 ValidAudience = AuthOptions.AUDIENCE,
-                 // будет ли валидироваться время существования
-                 ValidateLifetime = true,
-
-                 // установка ключа безопасности
-                 IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                 // валидация ключа безопасности
-                 ValidateIssuerSigningKey = true,
-  };
-});
-
-            services.AddAuthorization(options =>
-            {
-                options.DefaultPolicy = new AuthorizationPolicyBuilder(JwtBearerDefaults.AuthenticationScheme)
-                .RequireAuthenticatedUser()
-                .Build();
-            });
+            //auth
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        //what to validate
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateIssuerSigningKey = true,
+                        //setup validate data
+                        ValidIssuer = AuthOptions.ISSUER,
+                        ValidAudience = AuthOptions.AUDIENCE,
+                        IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey()
+                    };
+                });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddCors();
-            services.AddSession();
 
             services.AddDbContext<TodoContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -80,34 +57,18 @@ namespace ASP.NET
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //react
+            app.UseDeveloperExceptionPage();
+
+            app.UseReact(config => { });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
+           //auth
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            app.UseSession();
-
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
-            app.Use(async (context, next) =>
-            {
-                var JWToken = context.Session.GetString("JWToken");
-                if (!string.IsNullOrEmpty(JWToken))
-                {
-                    context.Request.Headers.Add("Authorization", "Token " + JWToken);
-                }
-                await next();
-            });
 
             app.UseAuthentication();
             app.UseMvc();

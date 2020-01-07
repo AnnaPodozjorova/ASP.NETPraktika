@@ -13,7 +13,7 @@ namespace XUnitTestAPI.Api
 {
     public class CitiesTestApi
     {
-        private readonly HttpClient _client;  // fakeiteasy
+        private readonly HttpClient _client;
 
         public CitiesTestApi()
         {
@@ -24,7 +24,7 @@ namespace XUnitTestAPI.Api
         }
 
         [Theory]
-        [InlineData("DELETE", "32")]
+        [InlineData("DELETE", "33")]
         public async Task DeleteCity(string method, string id = null)
         {
             var request = new HttpRequestMessage(new HttpMethod(method), $"api/Cities/{id}");

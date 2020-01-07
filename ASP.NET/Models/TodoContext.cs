@@ -28,8 +28,7 @@ namespace ASP.NET.Models
         {
             modelBuilder.Entity<Country>()
                 .HasMany(c => c.City);
-
-
+            
         }
     }
 }

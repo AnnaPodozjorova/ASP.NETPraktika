@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP.NET", "ASP.NET\ASP.NET.csproj", "{C0A95E0A-3E3D-4F29-9007-471C6BAA99A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestAPI", "XUnitTestAPI\XUnitTestAPI.csproj", "{5BD127E6-73BA-41E2-957B-5C609679E982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestAPI", "XUnitTestAPI\XUnitTestAPI.csproj", "{5BD127E6-73BA-41E2-957B-5C609679E982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET_React", "ASP.NET_React\ASP.NET_React.csproj", "{B25A055D-03FC-4E0B-B1F1-29ACEB72A8FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5BD127E6-73BA-41E2-957B-5C609679E982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BD127E6-73BA-41E2-957B-5C609679E982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BD127E6-73BA-41E2-957B-5C609679E982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25A055D-03FC-4E0B-B1F1-29ACEB72A8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25A055D-03FC-4E0B-B1F1-29ACEB72A8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25A055D-03FC-4E0B-B1F1-29ACEB72A8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25A055D-03FC-4E0B-B1F1-29ACEB72A8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

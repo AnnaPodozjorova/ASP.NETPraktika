@@ -20,22 +20,10 @@ namespace ASP.NET.Controllers
         {
             _context = context;
         }
-        
-        [Authorize]
-        [Route("getlogin")]
-        public IActionResult GetLogin()
-        {
-            return Ok($"Ваш логин: {User.Identity.Name}");
-        }
 
-        [Authorize(Roles = "admin")]
-        [Route("getrole")]
-        public IActionResult GetRole()
-        {
-            return Ok("Ваша роль: администратор");
-        }
 
         // GET: api/v1/world/Countries/all
+        //[Authorize(Roles = "Admin")]
         [HttpGet("all")]
         public async Task<ActionResult<IEnumerable<Country>>> Getcountry()
         {

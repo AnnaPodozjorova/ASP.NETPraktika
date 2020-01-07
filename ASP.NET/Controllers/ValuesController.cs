@@ -12,6 +12,18 @@ namespace ASP.NET.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        [Authorize(Roles = "Admin")]
+        [HttpGet("get-my-id")]
+        public ActionResult<string> GetMyId()
+        {
+            var idClaim = User.Claims.FirstOrDefault(x => x.Type.Equals("id", StringComparison.InvariantCultureIgnoreCase));
+            if (idClaim != null)
+            {
+                return Ok($"This is your Id: {idClaim.Value}");
+            }
+            return BadRequest("No claim");
+        }
+
         [Authorize]
         [Route("getlogin")]
         public IActionResult GetLogin()
@@ -34,7 +46,6 @@ namespace ASP.NET.Controllers
         }
 
         // GET api/values/5
-        [Authorize(Roles = "admin")]
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {

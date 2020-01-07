@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Net;
 
 namespace ASP.NET.Controllers
 {
@@ -23,7 +22,6 @@ namespace ASP.NET.Controllers
         }
 
         // PUT: api/Cities/5
-        [Authorize(Roles = "admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCity(long id, City city)
         {
@@ -79,7 +77,7 @@ namespace ASP.NET.Controllers
 
         // POST: api/Cities/all
         [HttpPost("all")]
-        public async Task<ActionResult<City>> PostCities() // possible to use as type HttpResonseMessage 
+        public async Task<ActionResult<City>> PostCities()
         {
             var cities = new List<City> {
             new City() { id = 9009, name = "Kohtla-Järve", countrycode = "EST", district = "Ida-Virumaa", population = 35187 },
@@ -104,7 +102,7 @@ namespace ASP.NET.Controllers
                 }
             }
 
-            return new ObjectResult(cities) { StatusCode = 200 }; // and return ok status Request.CreateResponse(HttpStatusCode.OK)
+            return new ObjectResult(cities) { StatusCode = 200 };
         }
 
         // DELETE: api/Cities/5
