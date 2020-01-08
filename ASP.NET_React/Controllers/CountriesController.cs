@@ -85,7 +85,8 @@ namespace ASP.NET_React.Controllers
             try
             {
                 var cities = await _context.city.Where(a => a.countrycode == country[0].code).ToListAsync();
-                return cities;
+                var t = cities.Select(o => new City{ id = o.id, name = o.name, countrycode = o.countrycode, district = o.district, population = o.population});
+                return t.ToList();
             }
             catch { }
             return NotFound();

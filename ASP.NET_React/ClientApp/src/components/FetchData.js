@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export class FetchData extends Component {
   static displayName = FetchData.name;
@@ -38,8 +39,8 @@ export class FetchData extends Component {
         <tbody>
           {forecasts.map(forecast =>
                     <tr key={forecast.code}>
-                        <td>{forecast.code}</td>
-                        <td>{forecast.name}</td>
+                        <td>  {forecast.code}  </td>
+                        <td><Link to={{ pathname: '/cities', state: { foo: forecast.name } }}> {forecast.name} </Link></td>
                         <td>{forecast.continent}</td>
                         <td>{forecast.region}</td>
                         <td>{forecast.surfacearea}</td>
