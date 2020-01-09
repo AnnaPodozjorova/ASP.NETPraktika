@@ -13,7 +13,7 @@ export class Counter extends Component {
     this.incrementCounter = this.incrementCounter.bind(this);
   }
 
-  incrementCounter () {const { foo } = this.props.location.state; console.log(foo);
+  incrementCounter () {
     this.setState({
       currentCount: this.state.currentCount + 1
     });
