@@ -1,4 +1,6 @@
 ﻿import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 
 export class Cities extends Component {
     static displayName = Cities.name;
@@ -28,6 +30,10 @@ export class Cities extends Component {
             })
         } 
     }
+
+    SendValue(val) {
+        return val;
+    }
     
     static renderForecastsTable(forecasts,del) {
     
@@ -36,8 +42,8 @@ export class Cities extends Component {
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>District</th>
                         <th>Country Code</th>
+                        <th>District</th>
                         <th>Population</th>
                     </tr>
                 </thead>
@@ -50,6 +56,9 @@ export class Cities extends Component {
                             <td>{forecast.population}</td>
                             <td>
                                 <button className="btn btn-primary" onClick={() => del(forecast.id)}>Delete</button>
+                            </td>
+                            <td>
+                                <Link to={{ pathname: '/edit-city', state: { cityid: forecast.id }  }}>Edit</Link>
                             </td>
                         </tr>
                     )}
