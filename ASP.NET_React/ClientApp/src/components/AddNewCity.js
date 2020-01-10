@@ -1,9 +1,10 @@
 ﻿import React from 'react'
 
-export class InsertDataForm extends React.Component {
+export class AddNewCity extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: null,
             name: '',
             countrycode: '',
             district: '',
@@ -11,25 +12,21 @@ export class InsertDataForm extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-       const { cityid } = this.props.location.state;
-        console.log(cityid);
     }
 
     handleChange(evt) {
         this.setState({
-            [evt.target.name]: evt.target.value 
-            
-        }); console.log(evt.target.name +": " +evt.target.value);
+            [evt.target.name]: evt.target.value
+
+        }); console.log(evt.target.name + ": " + evt.target.value);
     }
 
     handleSubmit(event) {
         console.log("success");
-        const { cityid } = this.props.location.state;
-        console.log(cityid);
-        fetch('api//Cities/' + cityid, {
-            method: 'PUT',
+        fetch('api/Cities', {
+            method: 'POST',
             body: JSON.stringify({
-                id: cityid,
+                id: this.state.id,
                 name: this.state.name,
                 countrycode: this.state.countrycode,
                 district: this.state.district,
@@ -49,37 +46,37 @@ export class InsertDataForm extends React.Component {
                 district: json,
                 population: json
             });
-            })
-
-
-
-      //  alert('Отправленное имя: ' + this.state.value);
-      //  event.preventDefault();
+        })
     }
 
     render() {
         return (
 
             <div className="input-panel">
-                <span className="form-caption">Edit city:</span>
+                <span className="form-caption">Add city:</span>
+                <div>
+                    <label className="field-name">ID:<br />
+                        <input value={this.state.id} name="id"  required onChange={this.handleChange} placeholder="id" />
+                    </label>
+                </div>
                 <div>
                     <label className="field-name">Name:<br />
-                        <input value={this.state.name} name="name"  required onChange={this.handleChange} placeholder="name" />
+                        <input value={this.state.name} name="name" required onChange={this.handleChange} placeholder="name" />
                     </label>
                 </div>
                 <div>
                     <label className="field-name">Country code:<br />
-                        <input value={this.state.countrycode} name="countrycode" maxLength="3" required onChange={this.handleChange} placeholder="country code" />
+                        <input value={this.state.countrycode} name="countrycode" required onChange={this.handleChange} placeholder="country code" />
                     </label>
                 </div>
                 <div>
                     <label className="field-name">District:<br />
-                        <input value={this.state.district} name="district"  onChange={this.handleChange} placeholder="district" />
+                        <input value={this.state.district} name="district" onChange={this.handleChange} placeholder="district" />
                     </label>
                 </div>
                 <div>
                     <label className="field-name">Population:<br />
-                        <input value={this.state.population} name="population"  onChange={this.handleChange} placeholder="population" />
+                        <input value={this.state.population} name="population" pattern="[a-z|A-Z]{2}" onChange={this.handleChange} placeholder="population" />
                     </label>
                 </div>
                 <br />

@@ -12,7 +12,8 @@ export class FetchData extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ forecasts: data, loading: false });
-      });
+          });
+   
   }
 
   static renderForecastsTable (forecasts) {
@@ -64,7 +65,7 @@ export class FetchData extends Component {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
       : FetchData.renderForecastsTable(this.state.forecasts);
-
+      console.log(this.state.forecasts.length);
     return (
       <div>
         <h1>Countries</h1>

@@ -78,6 +78,7 @@ export class Cities extends Component {
             <div>
                 <h1>Cities</h1>
                 {contents}
+                <Link to={{ pathname: '/add-city'}}>Add City</Link>
             </div>
         );
     }
