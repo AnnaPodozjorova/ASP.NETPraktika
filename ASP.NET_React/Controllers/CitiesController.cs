@@ -21,6 +21,13 @@ namespace ASP.NET_React.Controllers
             _context = context;
         }
 
+        // GET: api/Cities/all
+        [HttpGet("all")]
+        public async Task<ActionResult<IEnumerable<City>>> GetCity()
+        {
+            return await _context.city.ToListAsync();
+        }
+
         // PUT: api/Cities/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCity(long id, City city)

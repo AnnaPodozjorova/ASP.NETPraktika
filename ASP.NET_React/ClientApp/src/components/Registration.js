@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 
-export class Counter extends Component {
+export class Registration extends Component {
 
 
-    static displayName = Counter.name;
+    static displayName = Registration.name;
 
    
   constructor (props) {
@@ -22,7 +22,7 @@ export class Counter extends Component {
   render () {
     return (
       <div>
-        <h1>Counter</h1>
+            <h1>Registration</h1>
 
         <p>This is a simple example of a React component.</p>
 

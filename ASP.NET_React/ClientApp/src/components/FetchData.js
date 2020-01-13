@@ -13,7 +13,13 @@ export class FetchData extends Component {
       .then(data => {
         this.setState({ forecasts: data, loading: false });
           });
-   
+       /*fetch('api/Cities/all')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ cities: data, loading: false });
+            });
+        <td>{cities.find(city => city.id === forecast.capital).name}</td>
+        */
   }
 
   static renderForecastsTable (forecasts) {
@@ -63,8 +69,8 @@ export class FetchData extends Component {
 
   render () {
     let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+        ? <p><em>Loading...</em></p>
+        : FetchData.renderForecastsTable(this.state.forecasts);
       console.log(this.state.forecasts.length);
     return (
       <div>

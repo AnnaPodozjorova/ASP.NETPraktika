@@ -8,10 +8,18 @@ export class AddNewCity extends React.Component {
             name: '',
             countrycode: '',
             district: '',
-            population: ''
+            population: '',
+            /*cities: [], loading: true*/
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        /*fetch('api/Cities/all')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ cities: data, loading: false });
+            });
+        */
     }
 
     handleChange(evt) {
@@ -23,6 +31,14 @@ export class AddNewCity extends React.Component {
 
     handleSubmit(event) {
         console.log("success");
+
+        /*let max = this.state.loading
+            ? <p><em>Loading...</em></p>
+            : this.state.cities[this.state.cities.length - 1];
+        console.log(max);
+        id: max+1,
+        */
+        
         fetch('api/Cities', {
             method: 'POST',
             body: JSON.stringify({
@@ -38,7 +54,7 @@ export class AddNewCity extends React.Component {
         }).then(response => {
             return response.json()
         }).then(json => {
-            console.log(json)
+            console.log(json);
             this.setState({
                 id: json,
                 name: json,
