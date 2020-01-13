@@ -31,14 +31,6 @@ export class AddNewCity extends React.Component {
 
     handleSubmit(event) {
         console.log("success");
-
-        /*let max = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : this.state.cities[this.state.cities.length - 1];
-        console.log(max);
-        id: max+1,
-        */
-        
         fetch('api/Cities', {
             method: 'POST',
             body: JSON.stringify({
@@ -100,4 +92,4 @@ export class AddNewCity extends React.Component {
             </div>
         );
     }
-}
+} 

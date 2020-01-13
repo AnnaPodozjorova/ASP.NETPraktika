@@ -22,10 +22,9 @@ export class InsertDataForm extends React.Component {
         }); console.log(evt.target.name +": " +evt.target.value);
     }
 
-    handleSubmit(event) {
-        console.log("success");
+    handleSubmit() {
         const { cityid } = this.props.location.state;
-        console.log(cityid);
+        this.props.history.go(-1);
         fetch('api//Cities/' + cityid, {
             method: 'PUT',
             body: JSON.stringify({
@@ -50,11 +49,6 @@ export class InsertDataForm extends React.Component {
                 population: json
             });
             })
-
-
-
-      //  alert('Отправленное имя: ' + this.state.value);
-      //  event.preventDefault();
     }
 
     render() {
