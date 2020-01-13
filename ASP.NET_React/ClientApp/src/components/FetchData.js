@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export class FetchData extends Component {
-  static displayName = FetchData.name;
+    static displayName = FetchData.name; //displayName string is used in debugging messages
 
-  constructor (props) {
+    constructor(props) {//props are arguments passed into React components.
     super(props);
-    this.state = { forecasts: [], loading: true };
+        this.state = { forecasts: [], loading: true }; //The state object is where you store property values that belongs to the component
 
       fetch('api/v1/world/Countries/all')
       .then(response => response.json())

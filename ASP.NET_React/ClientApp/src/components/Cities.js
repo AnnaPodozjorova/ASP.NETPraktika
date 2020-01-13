@@ -20,6 +20,7 @@ export class Cities extends Component {
     }
 
     DeleteCityByID(CityId) {
+        window.location.reload(); //update page
         if (window.confirm('Are you sure?')) {
             fetch('api/Cities/' + CityId, {
                 method: 'DELETE',
@@ -28,11 +29,7 @@ export class Cities extends Component {
                     'Content-Type': 'application/json'
                 }
             })
-        } 
-    }
-
-    SendValue(val) {
-        return val;
+             } 
     }
     
     static renderForecastsTable(forecasts,del) {

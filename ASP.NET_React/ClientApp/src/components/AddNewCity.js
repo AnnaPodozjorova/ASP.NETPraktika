@@ -21,8 +21,9 @@ export class AddNewCity extends React.Component {
         }); console.log(evt.target.name + ": " + evt.target.value);
     }
 
-    handleSubmit(event) {
-        console.log("success");
+    handleSubmit() {
+        this.props.history.go(-1);
+
         fetch('api/Cities', {
             method: 'POST',
             body: JSON.stringify({
@@ -84,4 +85,4 @@ export class AddNewCity extends React.Component {
             </div>
         );
     }
-}
+} 
