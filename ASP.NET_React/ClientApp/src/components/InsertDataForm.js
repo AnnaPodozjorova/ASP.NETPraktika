@@ -35,7 +35,8 @@ export class InsertDataForm extends React.Component {
                 population: this.state.population
             }),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": "Bearer " + localStorage.getItem("token")
             }
         }).then(response => {
             return response.json()

@@ -8,6 +8,7 @@ export class Home extends Component {
             login: '',
             password: ''
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -21,25 +22,23 @@ export class Home extends Component {
     }
 
     handleSubmit() {
-        console.log("login=" + this.state.login + "&password=" + this.state.password + "");
-        var body = new FormData();
-        body.set("login", this.state.login);
-        body.set("password", this.state.password);
         fetch('api/Auth/token', {
             method: 'POST',
-            headers: new Headers({
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', // <-- Specifying the Content-Type
-            }),
-            body: body 
-        }).then(response => {
-            response.json()
-            }).then(data => {
-                if (data.message) {
-                } else {
-                    localStorage.setItem("token", data.jwt)
-                }
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                Login: this.state.login,
+                Password: this.state.password,
+                Role: "user"
             })
-        console.log(localStorage.token);
+        }).then(function (result) {
+            result.text().then(function (data) {
+                localStorage.setItem("token", data);
+                console.log(localStorage.getItem("token"));
+            });
+            });
     }
 
   render () {

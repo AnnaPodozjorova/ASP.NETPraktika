@@ -22,11 +22,13 @@ export class Cities extends Component {
     DeleteCityByID(CityId) {
         window.location.reload(); //update page
         if (window.confirm('Are you sure?')) {
-            fetch('api/Cities/' + CityId, {
+            fetch('api/Cities/' + CityId +'/', {
                 method: 'DELETE',
+                credentials: 'include',
                 header: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "Authorization": 'Bearer ' + localStorage.getItem("token")
                 }
             })
              } 

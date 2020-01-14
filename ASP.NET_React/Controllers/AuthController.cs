@@ -46,17 +46,17 @@ namespace ASP.NET_React.Controllers
         }
 
         [HttpPost("token")]
-        public ActionResult GetToken(string login, string password)
+        public ActionResult GetToken(Person pers)
         {
             //symmetric security key
             var symmetricSecurityKey = AuthOptions.GetSymmetricSecurityKey();
-            
+
             //signing credentials
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
 
             //add claims
             var claims = new List<Claim>();
-            var person = _context.person.Where(a => a.Login == login && a.Password == password).Single();
+            var person = _context.person.Where(a => a.Login == pers.Login && a.Password == pers.Password).Single();
             if (person.Login == null)
             {
                 return new NotFoundObjectResult(null);
@@ -66,7 +66,7 @@ namespace ASP.NET_React.Controllers
                 claims.Add(new Claim(ClaimTypes.Role, person.Role));
                 claims.Add(new Claim(ClaimTypes.Name, person.Login));
             }
-
+            
             //create token
             var token = new JwtSecurityToken(
                     issuer: AuthOptions.ISSUER,
@@ -77,7 +77,8 @@ namespace ASP.NET_React.Controllers
                 );
 
             //return token
-            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+            
+            return Content (new JwtSecurityTokenHandler().WriteToken(token));
         }
 
         private bool PersonExists(string login)
