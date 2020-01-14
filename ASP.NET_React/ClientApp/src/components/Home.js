@@ -1,26 +1,63 @@
 import React, { Component } from 'react';
 
 export class Home extends Component {
-  static displayName = Home.name;
+    static displayName = Home.name;
+    constructor(props) {
+        super(props);
+        this.state = {
+            login: '',
+            password: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(evt) {
+        this.setState({
+            [evt.target.name]: evt.target.value
+
+        });
+        console.log(evt.target.name + ": " + evt.target.value);
+    }
+
+    handleSubmit() {
+        console.log("login=" + this.state.login + "&password=" + this.state.password + "");
+        var body = new FormData();
+        body.set("login", this.state.login);
+        body.set("password", this.state.password);
+        fetch('api/Auth/token', {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', // <-- Specifying the Content-Type
+            }),
+            body: body 
+        }).then(response => {
+            response.json()
+            }).then(data => {
+                if (data.message) {
+                } else {
+                    localStorage.setItem("token", data.jwt)
+                }
+            })
+        console.log(localStorage.token);
+    }
 
   render () {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
-    );
+      return (
+          <div className="input-panel">
+              <span className="form-caption">Login:</span>
+              <div>
+                  <label className="field-name">Login:<br />
+                      <input value={this.state.login} name="login" required onChange={this.handleChange} placeholder="login" />
+                  </label>
+              </div>
+              <div>
+                  <label className="field-name">Password:<br />
+                      <input value={this.state.password} name="password" required onChange={this.handleChange} placeholder="password" />
+                  </label>
+              </div>
+              <button className="btn btn-primary" onClick={() => this.handleSubmit()}>Submit</button>
+          </div>
+      );
   }
 }

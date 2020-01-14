@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using ASP.NET_React.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ASP.NET_React.Controllers
@@ -11,20 +15,57 @@ namespace ASP.NET_React.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly TodoContext _context;
+
+        public AuthController(TodoContext context)
+        {
+            _context = context;
+        }
+
+        [HttpPost("register")]
+        public async Task<ActionResult<City>> PostPerson(Person pers)
+        {
+            _context.person.Add(pers);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (PersonExists(pers.Login))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return new ObjectResult(pers) { StatusCode = 200 };
+        }
+
         [HttpPost("token")]
-        public ActionResult GetToken()
+        public ActionResult GetToken(string login, string password)
         {
             //symmetric security key
             var symmetricSecurityKey = AuthOptions.GetSymmetricSecurityKey();
-
+            
             //signing credentials
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
 
             //add claims
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-            claims.Add(new Claim(ClaimTypes.Role, "Reader"));
-
+            var person = _context.person.Where(a => a.Login == login && a.Password == password).Single();
+            if (person.Login == null)
+            {
+                return new NotFoundObjectResult(null);
+            }
+            else
+            {
+                claims.Add(new Claim(ClaimTypes.Role, person.Role));
+                claims.Add(new Claim(ClaimTypes.Name, person.Login));
+            }
 
             //create token
             var token = new JwtSecurityToken(
@@ -37,6 +78,11 @@ namespace ASP.NET_React.Controllers
 
             //return token
             return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+        }
+
+        private bool PersonExists(string login)
+        {
+            return _context.person.Any(e => e.Login == login);
         }
     }
 }

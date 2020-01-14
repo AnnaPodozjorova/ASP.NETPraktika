@@ -9,17 +9,17 @@ export class AddNewCity extends React.Component {
             countrycode: '',
             district: '',
             population: '',
-            /*cities: [], loading: true*/
+            cities: [], loading: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        /*fetch('api/Cities/all')
+        fetch('api/Cities/all')
             .then(response => response.json())
             .then(data => {
                 this.setState({ cities: data, loading: false });
             });
-        */
+        
     }
 
     handleChange(evt) {
@@ -30,11 +30,17 @@ export class AddNewCity extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log("success");
+        this.props.history.go(-1);
+
+        let max = this.state.loading
+            ? <p><em>Loading...</em></p>
+            : this.state.cities[this.state.cities.length - 1];
+        console.log(max);
+
         fetch('api/Cities', {
             method: 'POST',
             body: JSON.stringify({
-                id: this.state.id,
+                id: max + 1,
                 name: this.state.name,
                 countrycode: this.state.countrycode,
                 district: this.state.district,
@@ -62,11 +68,6 @@ export class AddNewCity extends React.Component {
 
             <div className="input-panel">
                 <span className="form-caption">Add city:</span>
-                <div>
-                    <label className="field-name">ID:<br />
-                        <input value={this.state.id} name="id"  required onChange={this.handleChange} placeholder="id" />
-                    </label>
-                </div>
                 <div>
                     <label className="field-name">Name:<br />
                         <input value={this.state.name} name="name" required onChange={this.handleChange} placeholder="name" />

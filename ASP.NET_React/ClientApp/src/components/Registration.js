@@ -5,31 +5,63 @@ export class Registration extends Component {
 
 
     static displayName = Registration.name;
+    constructor(props) {
+        super(props);
+        this.state = {
+            login: '',
+            password: '',
+            role: 'user'
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-   
-  constructor (props) {
-    super(props);
-    this.state = { currentCount: 0 };
-    this.incrementCounter = this.incrementCounter.bind(this);
-  }
+    handleChange(evt) {
+        this.setState({
+            [evt.target.name]: evt.target.value
 
-  incrementCounter () {
-    this.setState({
-      currentCount: this.state.currentCount + 1
-    });
-  }
+        });
+        console.log(evt.target.name + ": " + evt.target.value);
+    }
 
-  render () {
-    return (
-      <div>
-            <h1>Registration</h1>
+    handleSubmit() {
+        fetch('api/Auth/register', {
+            method: 'POST',
+            body: JSON.stringify({
+                Login: this.state.login,
+                Password: this.state.password,
+                Role: "user"
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(response => {
+            return response.json()
+        }).then(json => {
+            console.log(json);
+            this.setState({
+                login: json,
+                password: json
+            });
+        })
+    }
 
-        <p>This is a simple example of a React component.</p>
-
-        <p>Current count: <strong>{this.state.currentCount}</strong></p>
-
-        <button className="btn btn-primary" onClick={this.incrementCounter}>Increment</button>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="input-panel">
+                <span className="form-caption">Registration:</span>
+                <div>
+                    <label className="field-name">Login:<br />
+                        <input value={this.state.login} name="login" required onChange={this.handleChange} placeholder="login" />
+                    </label>
+                </div>
+                <div>
+                    <label className="field-name">Password:<br />
+                        <input value={this.state.password} name="password" required onChange={this.handleChange} placeholder="password" />
+                    </label>
+                </div>
+                <button className="btn btn-primary" onClick={() => this.handleSubmit()}>Submit</button>
+            </div>
+        );
+    }
 }
