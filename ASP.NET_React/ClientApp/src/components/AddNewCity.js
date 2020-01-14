@@ -26,7 +26,7 @@ export class AddNewCity extends React.Component {
         this.setState({
             [evt.target.name]: evt.target.value
 
-        }); console.log(evt.target.name + ": " + evt.target.value);
+        });
     }
 
     handleSubmit(event) {
@@ -35,8 +35,7 @@ export class AddNewCity extends React.Component {
         let max = this.state.loading
             ? <p><em>Loading...</em></p>
             : this.state.cities[this.state.cities.length - 1];
-        console.log(max);
-
+        
         fetch('api/Cities', {
             method: 'POST',
             body: JSON.stringify({
@@ -53,7 +52,6 @@ export class AddNewCity extends React.Component {
         }).then(response => {
             return response.json()
         }).then(json => {
-            console.log(json);
             this.setState({
                 id: json,
                 name: json,

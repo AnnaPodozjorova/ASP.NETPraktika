@@ -60,7 +60,6 @@ namespace ASP.NET_React.Controllers
         }
 
         // POST: api/Cities
-        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<ActionResult<City>> PostCity(City city)
         {
@@ -115,7 +114,6 @@ namespace ASP.NET_React.Controllers
         }
 
         // DELETE: api/Cities/5
-        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<City>> DeleteCity(long id)
         {

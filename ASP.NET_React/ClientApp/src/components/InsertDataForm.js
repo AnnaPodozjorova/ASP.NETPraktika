@@ -12,14 +12,13 @@ export class InsertDataForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
        const { cityid } = this.props.location.state;
-        console.log(cityid);
     }
 
     handleChange(evt) {
         this.setState({
             [evt.target.name]: evt.target.value 
             
-        }); console.log(evt.target.name +": " +evt.target.value);
+        });
     }
 
     handleSubmit() {
@@ -41,7 +40,6 @@ export class InsertDataForm extends React.Component {
         }).then(response => {
             return response.json()
         }).then(json => {
-            console.log(json)
             this.setState({
                 id: json,
                 name: json,

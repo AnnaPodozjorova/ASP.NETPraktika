@@ -18,7 +18,6 @@ export class Home extends Component {
             [evt.target.name]: evt.target.value
 
         });
-        console.log(evt.target.name + ": " + evt.target.value);
     }
 
     handleSubmit() {
@@ -36,8 +35,7 @@ export class Home extends Component {
         }).then(function (result) {
             result.text().then(function (data) {
                 localStorage.setItem("token", data);
-                console.log(localStorage.getItem("token"));
-            });
+                });
             });
     }
 

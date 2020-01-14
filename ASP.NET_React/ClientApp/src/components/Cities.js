@@ -10,7 +10,6 @@ export class Cities extends Component {
         this.state = { forecasts: [], loading: true };
 
         const { foo } = this.props.location.state;
-        console.log(foo);
         fetch('api//v1/world/Countries/' + foo +'/city/all')
             .then(response => response.json())
             .then(data => {
@@ -22,7 +21,7 @@ export class Cities extends Component {
     DeleteCityByID(CityId) {
         window.location.reload(); //update page
         if (window.confirm('Are you sure?')) {
-            fetch('api/Cities/' + CityId +'/', {
+            fetch('api/Cities/' + CityId, {
                 method: 'DELETE',
                 credentials: 'include',
                 header: {

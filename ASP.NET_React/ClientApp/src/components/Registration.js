@@ -21,7 +21,6 @@ export class Registration extends Component {
             [evt.target.name]: evt.target.value
 
         });
-        console.log(evt.target.name + ": " + evt.target.value);
     }
 
     handleSubmit() {
@@ -38,7 +37,6 @@ export class Registration extends Component {
         }).then(response => {
             return response.json()
         }).then(json => {
-            console.log(json);
             this.setState({
                 login: json,
                 password: json
